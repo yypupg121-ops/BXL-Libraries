@@ -1,0 +1,11 @@
+# أدوات HTTP إضافية
+
+دالة json_get(الرابط):
+    البيانات = __native_requests.get(الرابط)
+    ارجع __native_json.الى_بيانات(البيانات)
+
+دالة post_json(الرابط, البيانات):
+    نص_البيانات = __native_json.الى_نص(البيانات)
+    هيدرز = {"Content-Type": "application/json"}
+    نتيجة = __native_requests.post(الرابط, نص_البيانات, هيدرز)
+    ارجع __native_json.الى_بيانات(نتيجة)
